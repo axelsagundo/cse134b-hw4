@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --white: #FFF;
+    --sand: #F7EFE5;
+    --main-color: #006600;
+    --black:#000;
+  }
+
+ * {
+   font-family: 'Lato', Tahoma, Sans-Serif;
+    margin: 0px;
+    padding:0px;
+    /* box-sizing: border-box; */
+    background-color: var(--white);
+  
+ }
+
+ .main-wrapper h2{
+   animation-name: asname;
+   animation-duration: 4s;
+ }
+
+ @keyframes asname {
+   0%  {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: var(--main-color);}
+  
+ }
+
+ @keyframes focus{
+   0%, 7% { transform: rotateZ(0); }
+    15% { transform: rotateZ(-15deg);}
+    20% {transform: rotateZ(10deg);}
+    25% {transform: rotateZ(-10deg);}
+    30% {transform: rotateZ(6deg);}
+    35% {transform: rotateZ(-4deg);}
+    40%, 100% { transform: rotateZ(0);}
+ }
+
+ header {
+    font-weight: 800;
+    font-size: 1.6em;
+    letter-spacing: .75px;
+    
+ }
+
+ .top-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    max-width: 100vw;   
+ }
+
+ .top-nav a{
+   color:var(--main-color);
+ }
+
+ .nav-links{
+   font-family: 'Lato', Tahoma, Sans-Serif;
+    font-weight: 800;
+    font-size: .7em;
+    display: flex;
+    justify-content: space-around;
+    width: 600px; 
+ }
+
+ .nav-links a:visited {
+   background-color: var(--white);
+ }
+
+
+ nav a{
+    margin-left: 1em;
+    margin-right: 1em;
+    text-decoration: none;
+ }
+
+
+ nav li {
+    list-style-type: none;
+ }
+
+ /*  ---------------------- index.html CSS ----------------------   */
+
+ .main-wrapper{
+   /* border-style: dashed; */
+   padding-top: 1em;
+   padding-bottom: 1em;
+   width: 80%;
+   /* height: 500px; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-style: solid;
+   border-color: var(--darkgreen);
+   border-width: 4px;
+   /* background-color: blue; */
+ }
+
+.main-wrapper h1, .main-wrapper h2, .main-wrapper h3, .main-wrapper img{
+   background-color: transparent;
+ }
+
+.main-wrapper h1, .main-wrapper h3{
+   font-size: 1.3em;
+   padding-bottom: 15px;
+ }
+
+ .main-wrapper h2{
+   font-size: 2em;
+   color: var(--main-color);
+   padding-bottom: 15px;
+ }
+
+
+main{
+   margin-top: 4em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size: 2em;
+}
+
+.button-styled {
+  align-items: center;
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  box-sizing: border-box;
+  color: var(--black);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+
+}
+
+.b-s-2{
+   animation: focus 2s linear infinite; 
+}
+
+
+.button-styled:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  fill: var(--main-color);
+  transform: rotate(180deg);
+}
+
+
+@media (min-width: 768px) {
+  .button-styled {
+    min-width: 170px;
+  }
+}
+
+
+.bottom-nav{
+   display: flex;
+   justify-content: center;
+}
+
+.bnav-links{
+   display: flex;
+   justify-content: space-around;
+}
+
+
+/*  ---------------------- projects.html CSS ----------------------   */
+
+.css-container{
+   padding-top: 25px;
+   padding-bottom: 25px;
+   max-width: 600px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 2.5fr 1fr;
+   gap: 1.25em;
+   align-items: center;
+}
+
+.css-container img{
+   padding-top: 35px;
+}
+
+.project-section h1, .project-section h2,  .project-section h3{
+   font-size: 1.5em;
+   font-weight: 800;
+   color: var(--main-color);
+}
+
+.pimg{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+/*  ---------------------- about.html CSS ----------------------   */
+
+.as-pic {
+   border-radius: 100px;
+   width: 200px;
+   height: 200px;
+}
+
+.s1 h1, .s2 h2, .s3 h3{
+   font-size: 1.5em;
+   font-weight: 800;
+   color: var(--main-color);
+
+}
+
+.s1{
+   width: 800px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+}
+
+.centerpls{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.s1 div{
+   padding-top: 50px;
+}
+
+.s2 , .s3{
+   display: flex;
+   width: 800px;
+}
+
+/*  ---------------------- resume.html CSS ----------------------   */
+
+.rs-wrapper{
+   padding-top: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.rs-wrapper h1{
+   font-size: 1.5em;
+   font-weight: 800;
+   color: var(--main-color);
+   padding-bottom: 20px;
+
+}
+
+.button-container{
+   padding-top: 20px;
+   margin-bottom: 20px;
+   display: flex;
+   gap: 20px;
+
+}
+
+footer{
+   padding-top: 20px ;
+   padding-bottom: 20px ;
+}
+
+/*  ---------------------- contact.html CSS ----------------------   */
+
+.form-container{
+   font-family: 'Lato', Tahoma, Sans-Serif;
+   font-weight: 700;
+   color: var(--main-color);
+}
+
+input[type=text], select, textarea {
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   resize: vertical;
+ }
+ 
+ label {
+   padding: 12px 12px 12px 0;
+   display: inline-block;
+ }
+ 
+ input[type=submit] {
+
+   background-color: var(--black);
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   float: right;
+   width: 300px;
+ }
+ 
+ input[type=submit]:hover {
+   background-color: var(--black);
+ }
+ 
+ .form-container {
+   border-radius: 5px;
+   padding: 20px;
+   width: 80%;
+   margin:0 auto;
+ }
+
+
+.col-1, .col-2, input[type=submit] {
+   width: 100%;
+   margin-top: 0px;
+ }
+
+ a{
+   text-decoration: none;
+   color: blue;
+ }
+
+
+ /* -------------------------------- MEDIA QUERY FOR MOBILE DEVICE --------------------------------*/
+
+ 
+ @media only screen and (max-width: 640px) {
+
+   .site-header{
+      font-weight: 800;
+      font-size: 1em;
+      letter-spacing: .75px;
+   }
+
+   .top-nav{
+      padding-top: 25px;
+      font-size: 1.1em;
+      display: flex;
+      flex-direction: column;
+   }
+
+   .nav-links{
+      width: 300px;
+      font-size: .8em;
+   }
+   
+   #bottom-logo{
+      display:none;
+   }
+
+   .main-wrapper h1, .main-wrapper h3{
+      font-size: 1em;
+      padding-bottom: 15px;
+    }
+   
+    .main-wrapper h2{
+      font-size: 1em;
+      color: var(--main-color);
+      padding-bottom: 15px;
+    }
+
+    main{
+      margin-top: 4em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
+   }
+
+
+
+   footer{
+      padding-top: 5px;
+      padding-bottom: 5px;
+   }
+
+   /* ----------- projects.html  -----------*/
+
+   .css-container{
+      padding-top: 65px;
+      padding-left: 25px;
+      padding-right: 25px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1em;
+      align-items: center;
+      
+   }
+
+   .css-container h1, .css-container h2, .css-container h3 {
+      font-size: 1.5em;
+
+   }
+   .css-container img{
+      height: 100px;
+      width: 100px;
+   }
+
+   .css-container *{
+      font-size: 1em;
+   }
+
+   .pimg{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   /* ----------- about.html  -----------*/
+
+   .s1{
+      width: 300px;
+      font-size: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+   }
+
+   .as-pic{
+      padding-top: 50px;
+      height: 150px;
+      width: 150px;
+      
+   }
+
+   .s2, .s3{
+
+      width:300px;
+      margin: 0 auto;
+   }
+
+   /* ----------- resume.html  -----------*/
+   .rs-wrapper h1{
+      font-size: 1.5em;
+   }
+   iframe{
+      width: 300px;
+      height: 350px;
+   }
+
+   input[type=submit] {
+
+      background-color: var(--black);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .form-container {
+      border-radius: 5px;
+      padding: 20px;
+      width: 80%;
+      margin:0 auto;
+      margin-top: 20px;
+    }
+
+    #c-nav{
+      padding-top: 25px;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) and (min-width:641px) {
+   .s1{
+      width:600px;
+   }
+   .s1 img{
+      padding-right:25px;
+   }
+   .s2, .s3{
+
+      width: 600px;
+      margin: 0 auto;
+   }
+}

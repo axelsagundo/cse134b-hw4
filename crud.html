@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+
+
+    <dialog id="blog">
+        <p> CREATE A BLOG POST! </p>
+
+        <form method="dialog">
+            <label for="title"> Title: </label> 
+            <input id="title" type="text"></input> <br> <br>
+            <label for="date"> Date: </label> 
+            <input id="date" type="text"></input> <br> <br>
+            <label for="summary"> Summary: </label> <br>
+            <input id="summary" type="text"></input> <br><br>
+
+            <button id="blog-cancel"> Cancel </button>
+            
+            <button id="blog-save"> Save </button>
+        </form>
+    </dialog>
+
+
+    <dialog id="blog-edit">
+        <p> CREATE A BLOG POST! </p>
+        
+        <form method="dialog">
+            <label for="be_title"> Title: </label> 
+            <input id="be_title" type="text"></input> <br> <br>
+            <label for="be_date"> Date: </label> 
+            <input id="be_date" type="text"></input> <br> <br>
+            <label for="be_summary"> Summary: </label> <br>
+            <input id="be_summary" type="text"></input> <br><br>
+
+            <button id="be_cancel"> Cancel </button>
+            
+            <button id = "be_save"> Save </button>
+        </form>
+    </dialog>
+
+
+    <h1> Blog Posts </h1>
+
+    <ul id="blog-list">
+
+    </ul>
+
+    <button id="add"> ADD </button>
+    
+
+    <script type="module">
+
+        import {createPost} from './blog.js';
+        
+        let items = [];
+
+        const blog_dialog = document.getElementById('blog');
+        const add_button = document.getElementById("add");
+        const savebutton = document.getElementById("blog-save");        
+        let postCurrentlyOn = -1;
+    
+        add_button.addEventListener("click", (event) => {
+            blog_dialog.showModal();
+        });
+
+        add_button.addEventListener("mousedown", (event) => {
+            const title = document.getElementById("title");
+            const date = document.getElementById("date");
+            const summary = document.getElementById("summary");
+            title.value = "";
+            date.value = "";
+            summary.value = "";
+        });
+
+        savebutton.addEventListener("click", (event) => {
+            //blog_dialog.showModal();
+            const title = document.getElementById("title");
+            const date = document.getElementById("date");
+            const summary = document.getElementById("summary");
+            
+            let ul = document.getElementById("blog-list")
+            let li = createPost(title.value, date.value, summary.value);
+            ul.appendChild(li);
+
+            let editButtons = document.getElementsByClassName("edit");
+            let deleteButtons = document.getElementsByClassName("delete");
+
+            for (let i = 0; i < editButtons.length; i++) {
+                if(editButtons[i].getAttribute("valid") === "0"){
+                    editButtons[i].setAttribute("valid","1");
+                    editButtons[i].addEventListener('click', function(){
+                        editPost(li.getAttribute('id'));
+                    }, false);
+                }
+            }
+
+            for (let i = 0; i < deleteButtons.length; i++) {
+                if (deleteButtons[i].getAttribute("valid") === "0"){
+                    deleteButtons[i].setAttribute("valid", "1");
+                    deleteButtons[i].addEventListener('click', function(){
+                        deletePost(li.getAttribute('id'));
+                    }, false);
+                }
+            }
+        });
+
+        function editPost(id){
+            console.log(id);
+            const lastChar = id.at(-1);
+            const edit_dialog = document.getElementById('blog-edit');
+            const blogpost = document.getElementById(id);
+            let blogpostTitle = document.getElementById("title"+lastChar);
+            let blogpostDate = document.getElementById("date"+lastChar);
+            let blogpostSummary = document.getElementById("summary"+lastChar);
+            // console.log(blogpostTitle.textContent);
+            // console.log(blogpostDate.textContent);
+            // console.log(blogpostSummary.textContent);
+            document.getElementById("be_title").value =  blogpostTitle.textContent.slice(7);
+            document.getElementById("be_date").value =  blogpostDate.textContent.slice(9);
+            document.getElementById("be_summary").value =  blogpostSummary.textContent;
+            edit_dialog.showModal();
+            postCurrentlyOn = lastChar;
+        }
+
+        function deletePost(id){
+            console.log(id);
+            let delPost = document.getElementById(id);
+            delPost.remove();
+        }
+
+        const be_save = document.getElementById("be_save"); 
+
+        be_save.addEventListener("click", (event) => {
+            let nutitle = document.getElementById("be_title");
+            let nudate = document.getElementById("be_date");
+            let nusummary = document.getElementById("be_summary");
+            let tt = "Title: " + nutitle.value;
+            let dd = " - Date: " + nudate.value;            
+            let ti = document.getElementById("title" + postCurrentlyOn);
+            let da = document.getElementById("date" + postCurrentlyOn);
+            let su = document.getElementById("summary" + postCurrentlyOn);
+            ti.textContent = tt;
+            da.textContent = dd;
+            su.textContent = nusummary.value;
+        });
+
+    </script>
+    
+</body>
+</html>

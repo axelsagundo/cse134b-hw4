@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Page</title>
+
+    <style>
+        *{box-sizing: border-box;}
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="top-nav">
+            <a href="index.html" class="logo"> AXEL SAGUNDO </a>
+            <ul class="nav-links" id="c-nav">
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="resume.html">RESUME</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <form action="/contact.html" method="POST">
+    
+            <div class="row">
+                <div class="col-1"><label for="name"> Name: </label></div>
+                <div class="col-2"><input type="text" id="name" name="name" placeholder="e.g. John Doe"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-1"><label for="email"> Email Address: </label ></div>  
+                <div class="col-2"><input type="text" id="email" name="email" required placeholder="example@mail.com"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-1"><label for="city"> City: </label ></div>
+                <div class="col-2"><input type="text" id="city" required placeholder="e.g. Los Angeles, CA"> </div>
+            </div>
+             
+            <div class="row">
+                <div class="col-1"><label for="message"> Message: </label></div>
+                <div class="col-2"><textarea name="message" id="message" placeholder="Send me a message!"></textarea></div>
+            </div>
+            
+            <div class="row"> <input type="submit" value="Submit"></div>
+            
+        </form>
+    </div>
+    
+    <footer>
+        <br>
+        <nav class="bottom-nav">
+            <a href="#" id="bottom-logo">  © 2023 Axel Sagundo </a>
+            <ul class="bnav-links">
+                <li><a href="#"> LinkedIn </a></li>
+                <li><a href="#"> Github </a></li>
+                <li><a href="#"> Twitter </a></li>
+            </ul>
+        </nav>
+
+    </footer>
+    
+</body>
+</html>

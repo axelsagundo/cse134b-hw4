@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dialogs</title>
+</head>
+<body>
+    
+    <dialog id="alert_dialog">
+        <p>Alert pressed!</p>
+        <form method="dialog">
+            <button>OK</button>
+        </form>
+    </dialog>
+
+    <dialog id="confirm_dialog">
+        <p>Please press OK</p>
+        <form method="dialog">
+            <button id="cancel">CANCEL</button>
+            <button id="ok">OK</button>
+        </form>
+    </dialog>
+
+    <dialog id="prompt_dialog">
+        <p> Send me a message! </p>
+        <form method="dialog">
+            <input id="text" type="text"></input>
+            <hr>
+            <button id="p_cancel"> CANCEL </button>
+            <button id="p_ok"> OK </button>
+        </form>
+    </dialog>
+
+    <h1>Part 2</h1>
+    <br>
+    <button id = "alert_b">Alert</button>
+    <button id = "confirm_b">Confirm</button>
+    <button id = "prompt_b">Prompt</button>
+    <br><br>
+    <hr>
+    <output id="output"></output>
+
+    <script type="module">
+        import {implementButtons} from './customdialog.js';
+        implementButtons();
+    </script>
+
+    
+
+
+
+    
+</body>
+</html>

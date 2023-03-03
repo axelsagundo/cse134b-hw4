@@ -1,0 +1,50 @@
+body{
+    background-color: white;
+}
+
+dialog{
+    background-color: yellow;
+    
+}
+
+/* h1, ul, li {
+
+    text-align: center;
+} */
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+.edit{
+    
+    background: url(./266146.png); 
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Dialogs</title>
+
+
+</head>
+<body>
+    <h1>Part 1</h1>
+    <br>
+    <button id = "alert_b">Alert</button>
+    <button id = "confirm_b">Confirm</button>
+    <button id = "prompt_b">Prompt</button>
+    <button id = "sprompt_b">Safer Prompt</button>
+    <br><br>
+    <hr>
+    <output id="output"></output>
+
+    <script>
+        const alertbutton = document.getElementById("alert_b");
+        const confirmbutton = document.getElementById("confirm_b");
+        const promptbutton = document.getElementById("prompt_b");
+        const spromptbutton = document.getElementById("sprompt_b");
+        const output = document.getElementById("output");
+
+        alertbutton.addEventListener("click", (event) => {
+            alert('Today is: ' + new Date());
+        });
+
+
+        confirmbutton.addEventListener("click", (event) => {
+            let r = confirm('Will you confirm this?');
+            if(r)
+            {
+                output.textContent = "Confirmed result: TRUE";
+            } else 
+            {
+                output.textContent = "Confirmed result: FALSE";
+            }
+        });
+
+
+        promptbutton.addEventListener("mouseup", (event) => {
+            const input = prompt("Enter some text:");
+            if(input){
+                output.innerHTML = "You entered: " + input;
+            } else {
+                output.innerHTML = "You did not enter anything";
+            }
+        });
+
+        spromptbutton.addEventListener("mouseup", (event) => {
+            const input = prompt("Enter some text:");
+            if(input){
+                output.textContent = `You entered: ${input}`;
+            } else {
+                output.textContent = "You did not enter anything";
+            }
+        });
+
+        confirmbutton.addEventListener("mousedown", async () => {
+            output.textContent = "";
+        });
+
+        promptbutton.addEventListener("mousedown", async () => {
+            output.textContent = "";
+        });
+
+        spromptbutton.addEventListener("mousedown", async () => {
+            output.textContent = "";
+        });
+
+        alertbutton.addEventListener("mousedown", async () => {
+            output.textContent = "";
+        });
+
+    </script>
+
+</body>
+</html>
